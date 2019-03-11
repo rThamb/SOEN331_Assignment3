@@ -7,6 +7,8 @@ package ADT;
  *
  * @param <T>
  */
+
+
 public class Node{
 
     private Integer key;
@@ -24,6 +26,7 @@ public class Node{
     public void setKey(Integer key) {
         this.key = key;
     }
+
 
     public String getValue() {
         return value;
