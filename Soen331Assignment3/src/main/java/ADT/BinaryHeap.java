@@ -1,7 +1,5 @@
 package ADT;
 
-import be.ac.ua.ansymo.adbc.annotations.requires;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -9,9 +7,11 @@ import java.util.List;
 public class BinaryHeap{
 
     private ArrayList<Node> allNodes;
+    private int capacity;
 
-    public BinaryHeap(int size){
-        allNodes = new ArrayList<Node>(size);
+    public BinaryHeap(int capacity){
+        allNodes = new ArrayList<Node>();
+        this.capacity = capacity;
     }
 
 
@@ -40,6 +40,24 @@ public class BinaryHeap{
 
         return minValue;
     }
+    
+    public int getSize() {
+        return allNodes.size();
+    }
+    
+    public ArrayList<Node> getList()
+    {
+        return this.allNodes;
+    }
+    
+    public boolean isFull () {
+	return this.allNodes.size() == capacity;
+    }
+	
+	
+    public boolean isEmpty () {
+	return  this.allNodes.isEmpty();
+    } 
 
     private void heapify(int parentIndex)
     {
@@ -65,9 +83,6 @@ public class BinaryHeap{
             heapify(nextParent);
         }
     }
-
-
-
 
     /*
         Helper Method used
